@@ -1,0 +1,192 @@
+<%-include ("partials/header")-%>
+
+<div class = "fulls">
+  <main class = "main">
+      <div class = "full1">
+      <nav class = "horizontal">
+          <div class = "tfull">
+          <div class = "tfull1">
+              <a class = "tfull2" href = " ">
+              Pages
+              <span class = "tfull3">
+                  /
+              </span>
+              </a>
+              <a class = "tfull4" href = "/notification">
+              Notifications
+              </a>
+          </div>
+          <p class = "tfull5">
+              <a class = "tfull6" href = "/notification">
+              Notifications
+              </a>
+          </p>
+          </div>  
+      </nav>
+
+<!-------Student Card----------->
+
+<div class = "student">
+  <div class = "student-body">
+    <div class="student-head">
+      <div class = "general-h">
+        <h4 class = "general-title">All Notification Data</h4>
+      </div>
+    </div>
+
+    <div class = "search-form">
+      <div class = "search-form1">
+
+        <form action = "/notification/addnotification" class = "del-form2">
+          <button type="submit" class="search-btn">Add+</button>
+        </form>
+
+        <form class="srch-form1">
+          <button class="delete-btn">Remove-</button>
+        </form>
+
+        <form style = "display: none;" class="del-form2">
+          <button class="src-btn">Show</button>
+        </form>
+
+        <form style = "display: none;" class="srch-form1">
+          <button  style = "display: none;" class="edit-btn">Edit+/-</button>
+        </form>
+
+          <% let emails = data1.map(item => encodeURIComponent(item.email)).join(','); %>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= emails %>&authuser=2" target="_blank"
+              data-tooltip-enabled="true" data-tooltip-id="tt-c216" jsaction="">
+              <button class="edit-btn">Compose All</button>
+            </a>
+      </div>
+
+      <form action="/notification" method = "post">
+        <div class = "design-widht">
+          <div class="input-card">
+            <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Remove Notification</h2>
+            <label class="input form_label">
+              <input name = "title" class="input__field " type="text" placeholder="Enter Notification Title. ">
+            </label>
+            <div class="button-group">
+              <button class = "send" type = "submit">Send</button>
+              <button class = "reset" type="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form style = "display: none;" action="/students/editstudent" method = "get">
+        <div class = "design-widht1">
+          <div class="input-card1">
+            <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Edit Notification</h2>
+            <label class="input">
+              <input name = "semID" class="input__field" type="text" placeholder="Enter Notification Title. ">
+            </label>
+            <div class="button-group">
+              <button class = "send" type = "submit">Send</button>
+              <button class = "reset" type="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <form style = "display: none;" action="/semester/editsemester" method = "get">
+        <div class = "design-widht2">
+          <div class="input-card2">
+            <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Edit Semester</h2>
+            <label class="input">
+              <input name = "title" class="input__field" type="text" placeholder="Enter Semester ID. ">
+            </label>
+            <div class="button-group">
+              <button class = "send1" type = "submit">Send</button>
+              <button class = "reset" type="reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      
+    </div>
+
+      <form class = "search-form">
+        <div class = "search-form1">
+          <div class = "form1">
+            <input type="text" id="search-by-rollNo" placeholder="Search by Roll No ..." class="form-control">
+          </div>
+
+          <div class = "form2">
+            <input type="text" id="search-by-name" placeholder="Search by Title ..." class="form-control">
+          </div>
+
+          <div class = "form2">
+            <input type="text"  id="search-by-batch" placeholder="Search by Date ..." class="form-control">
+          </div>
+
+          <div class = "form3">
+            <button type="submit" id="search-button" class="search-btn">SEARCH</button>
+          </div>
+
+        </div>
+      </form>
+
+                  <div class = "student-table">
+                    <div class = "student-table1">
+                      <table class = "student-table2">
+                        <thead>
+                          <tr role = "row">
+                            <th class="sorting_asc" rowspan="1" colspan="1" aria-label="Roll" style="width: 85.8px;">
+                                <div class="form-check">
+                                  <input type="checkbox" class="check">
+                                  <label class="check-label">#</label>
+                                </div>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Roll No</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Text</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Title</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Date</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody id = "data">
+                            <% data.forEach((row,index) =>{ %>
+                            <tr role="row" class= "<%= index % 2 === 0 ? 'even' : 'odd' %>">
+                              <td class="sorting_1">
+                                  <div class="form-check">
+                                      <input type="checkbox" class="check">
+                                      <label class="check-label"><%= index + 1 %></label>
+                                  </div>
+                              <td style = "padding-left:1rem;"> 
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= encodeURIComponent(data1[index].email) %>&su=<%= encodeURIComponent(row.notification_title) %>&body=<%= encodeURIComponent(row.notification_text) %>&authuser=2" target="_blank" 
+                                  aria-label="Email <%= typeof data1[index] !== 'undefined' && typeof data1[index].email !== 'undefined' ? data1[index].email : '-' %>" 
+                                  data-tooltip-enabled="true" 
+                                  data-tooltip-id="tt-c10">
+                                    <%= (typeof data2[index] !== 'undefined' && data2[index].rollNo === null) ? 'ALL' : data2[index].rollNo %>
+                                </a>
+                            </td>
+                              <td  style = "padding-left:1rem;">
+                                <%= typeof row !== 'undefined' && typeof row.notification_text !== 'undefined' ? row.notification_text : '-' %>
+                              </td>
+                              <td class="name" style = "padding-left:1rem;">
+                                <%= typeof row !== 'undefined' && typeof row.notification_title !== 'undefined' ? row.notification_title : '-' %>
+                              </td>
+                              <td style = "padding-left:1rem;">
+                                <%let date = new Date(row.notification_date);
+                                let year = date.getFullYear();
+                                let month = date.getMonth() + 1;
+                                let day = date.getDate();
+                                let formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+                                %>
+                                <%= typeof formattedDate !== 'undefined' ? formattedDate : '-' %>
+                              </td>
+                                </div>                   
+                            </tr>
+
+                            <% })%>
+                            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<%-include ("partials/footer")-%>

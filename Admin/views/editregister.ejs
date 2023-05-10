@@ -1,0 +1,128 @@
+<%-include ("partials/header")-%>
+
+<!-- Main Dashboard -->
+
+<div class = "fulls">
+    <main class = "main">
+      <div class = "full1">
+        <nav class = "horizontal">
+          <div class = "tfull">
+            <div class = "tfull1">
+              <a class = "tfull2" href = " ">
+                Pages
+                <span class = "tfull3">
+                  /
+                </span>
+              </a>
+              <a class = "tfull4" href = "/register">
+                Registration
+              </a>
+            </div>
+            <p class = "tfull5">
+              <a class = "tfull6" href = "/register">
+                Registration
+              </a>
+            </p>
+          </div>  
+        </nav>
+
+    <!-------Student Card----------->
+
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Edit Registration Information</h4>
+                        </div>
+                    </div>
+
+                <form class= "" action = "/register/editregister" method = "post">
+                    <div class = "row">
+
+                        <div class = "add">
+                            <label class = "add-input">Teacher ID</label>
+                            <select placeholder = "Select" name = "teachID" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data.forEach(row => {%>
+                                    <option value = "<%= row.teacher_id %>"><%= row.teacher_id %> (<%= row.Teacher_Name %>)</option>
+                                 <% }); %>
+                            </select>                         
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Section Name</label>
+                            <input name = "secName" type="text" placholder = "i.e(4C)" class="form-control">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Course Code</label>
+                            <select placeholder = "Select" name = "courseCode" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data1.forEach(row => {%>
+                                    <option value = "<%= row.course_code %>"><%= row.course_code %> (<%= row.course_name %>)</option>
+                                 <% }); %>
+                            </select>   
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Semester ID</label>
+                            <select placeholder = "Select" name = "semID" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data2.forEach(row => {%>
+                                    <option value = "<%= row.id %>"><%= row.id %> (<%= row.semester_session %> <%= row.semester_year %>)</option>
+                                 <% }); %>
+                            </select>   
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Degree ID</label>
+                            <select placeholder = "Select" name = "degID" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data3.forEach(row => {%>
+                                    <option value = "<%= row.id %>"><%= row.id %> (<%= row.name_abbreviation %>)</option>
+                                 <% }); %>
+                            </select>   
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Batch ID</label>
+                            <select placeholder = "Select" name = "batchID" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data4.forEach(row => {%>
+                                    <option value = "<%= row.id %>"><%= row.id %> (<%= row.batch_session %><%= row.batch_year %>)</option>
+                                 <% }); %>
+                            </select>   
+                        </div>
+
+
+                        <div class = "add">
+                            <label class = "add-input">Total Seats</label>
+                            <input name = "totalSeats" type="number"  class="form-control">
+                        </div>
+
+
+                        <div class = "add">
+                            <label class = "add-input">Available Seats</label>
+                            <input name = "availableSeats" type="number" placeholder="" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "add2">
+                    <button type="submit" class="add2-btn">Submit</button>
+                    <button type="reset" class="add2-btn1">Reset</button>
+                </div>
+            </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<%-include ("partials/footer")-%>

@@ -1,0 +1,204 @@
+<%-include ("partials/header")-%>
+
+<div class = "fulls">
+    <main class = "main">
+      <div class = "full1">
+        <nav class = "horizontal">
+          <div class = "tfull">
+            <div class = "tfull1">
+              <a class = "tfull2" href = " ">
+                Pages
+                <span class = "tfull3">
+                  /
+                </span>
+              </a>
+              <a class = "tfull4" href = "/timetable">
+                TimeTable
+              </a>
+            </div>
+            <p class = "tfull5">
+              <a class = "tfull6" href = "/timetable">
+                TimeTable
+              </a>
+            </p>
+          </div>  
+        </nav>
+
+<!-------Student Card----------->
+
+        <div class = "student">
+            <div class = "student-body">
+            <div class="student-head">
+                <div class = "general-h">
+                <h4 class = "general-title">All TimeTable Data</h4>
+                </div>
+            </div>
+
+
+            <div class = "search-form">
+              <div class = "search-form1">
+        
+                <form action = "/timetable/addtime" class = "del-form2">
+                  <button type="submit" class="search-btn">Add+</button>
+                </form>
+        
+                <form class="srch-form1">
+                  <button class="delete-btn">Remove-</button>
+                </form>
+        
+                <form style = "display: none;" class="del-form2">
+                  <button class="src-btn">Show</button>
+                </form>
+        
+                <form class="srch-form1">
+                  <button class="edit-btn">Edit+/-</button>
+                </form>
+              </div>
+        
+              <form action="/timetable" method = "post">
+                <div class = "design-widht">
+                  <div class="input-card">
+                    <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Remove TimeTableRow</h2>
+                    <label class="input form_label">
+                      <input name = "timeID" class="input__field " type="text" placeholder="Enter TimeTableRow ID. ">
+                    </label>
+                    <div class="button-group">
+                      <button class = "send" type = "submit">Send</button>
+                      <button class = "reset" type="reset">Reset</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+        
+              <form style = "display: none;" action="/students/editstudent" method = "get">
+                <div class = "design-widht1">
+                  <div class="input-card1">
+                    <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Edit Course</h2>
+                    <label class="input">
+                      <input name = "courseCode" class="input__field" type="text" placeholder="Enter TimeTableRow ID.. ">
+                    </label>
+                    <div class="button-group">
+                      <button class = "send" type = "submit">Send</button>
+                      <button class = "reset" type="reset">Reset</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+        
+              <form action="/timetable/edittime" method = "get">
+                <div class = "design-widht2">
+                  <div class="input-card2">
+                    <h2 style = "font-weight: 900; font-size: 1.5em; margin-top: 0;">Edit TimeTable</h2>
+                    <label class="input">
+                      <input name = "timeID" class="input__field" type="text" placeholder="Enter TimeTableRow ID. ">
+                    </label>
+                    <div class="button-group">
+                      <button class = "send1" type = "submit">Send</button>
+                      <button class = "reset" type="reset">Reset</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+        
+              <form class = "search-form">
+                <div class = "search-form1">
+                  <div class = "form1">
+                    <input type="text" id="search-by-rollNo" placeholder="Search by ID ..." class="form-control">
+                  </div>
+        
+                  <div class = "form2">
+                    <input type="text" id="search-by-name" placeholder="Search by Start Time ..." class="form-control">
+                  </div>
+        
+                  <div class = "form2">
+                    <input type="text"  id="search-by-batch" placeholder="Search by End Time ..." class="form-control">
+                  </div>
+        
+                  <div class = "form3">
+                    <button type="submit" id="search-button" class="search-btn">SEARCH</button>
+                  </div>
+        
+                </div>
+              </form>
+
+                  <div class = "student-table">
+                    <div class = "student-table1">
+                      <table class = "student-table2">
+                        <thead>
+                          <tr role = "row">
+                            <th class="sorting_asc" rowspan="1" colspan="1" aria-label="Roll" style="width: 85.8px;">
+                                <div class="form-check">
+                                  <input type="checkbox" class="check">
+                                  <label class="check-label">#</label>
+                                </div>
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">ID</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Section ID</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Start Time</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">End Time</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Day no</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 80.6875px;">Venue</th>
+                          </tr>
+                        </thead>
+                        <tbody id = "data">
+                            <% data.forEach((row,index) =>{ %>
+                            <tr role="row" class= "<%= index % 2 === 0 ? 'even' : 'odd' %>">
+                              <td class="sorting_1">
+                                  <div class="form-check">
+                                      <input type="checkbox" class="check">
+                                      <label class="check-label"><%= index + 1%></label>
+                                  </div>
+                              <td style = "padding-top:1rem; padding-bottom:1rem;padding-left:1rem;"><%= typeof row.id !== 'undefined' ? row.id : '-' %></td>
+                              <td style = "padding-top:1rem; padding-bottom:1rem;padding-left:1rem;"><%= typeof row.section_id !== 'undefined' ? row.section_id : '-' %></td>
+                              <td class="name" style = "padding-left:1rem;">
+                                <%
+                                 let date = new Date(row.start_time);
+                                let options = { hour: '2-digit', minute: '2-digit', hour12: false };
+                                let time = date.toLocaleTimeString([], options);
+                                %>
+                             <%= time %>                          
+                            </td>
+                              <td style = "padding-left:1rem;">
+                                <%
+                                 let date1 = new Date(row.end_time);
+                                let options1 = { hour: '2-digit', minute: '2-digit', hour12: false };
+                                let time1 = date1.toLocaleTimeString([], options1);
+                                %>
+                             <%= time1 %>                                   </td>
+                              <td style = "padding-left:1rem;">
+                                <% if (typeof row.day_no !== 'undefined') { %>
+                                    <% if (row.day_no === 1) { %>
+                                    <%= row.day_no %> (Monday)
+                                    <% } else if (row.day_no === 2) { %>
+                                        <%= row.day_no %> (Tuesday)
+                                    <% } else if (row.day_no === 3) { %>
+                                        <%= row.day_no %> (Wednesday)
+                                    <% } else if (row.day_no === 4) { %>
+                                        <%= row.day_no %> (Thursday)
+                                    <% } else if (row.day_no === 5) { %>
+                                        <%= row.day_no %> (Friday)
+                                    <% } else if (row.day_no === 6) { %>
+                                        <%= row.day_no %> (Saturday)
+                                    <% } else { %>
+                                        <%= row.day_no %>
+                                    <% } %>
+                                    <% } else { %>
+                                        -
+                                <% } %>
+                            </td>
+                              <td style = "padding-left:1rem;"><%= typeof row.venue !== 'undefined' ? row.venue : '-' %></td>
+                              </div>                   
+                            </tr>
+
+                            <% })%>
+                            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<%-include ("partials/footer")-%>

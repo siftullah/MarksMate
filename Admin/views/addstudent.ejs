@@ -1,0 +1,213 @@
+<%-include ("partials/header")-%>
+
+<!-- Main Dashboard -->
+
+<div class = "fulls">
+<main class = "main">
+    <div class = "full1">
+    <nav class = "horizontal">
+        <div class = "tfull">
+        <div class = "tfull1">
+            <a class = "tfull2" href = " ">
+            Pages
+            <span class = "tfull3">
+                /
+            </span>
+            </a>
+            <a class = "tfull4" href = "/students">
+            Students
+            </a>
+        </div>
+        <p class = "tfull5">
+            <a class = "tfull6" href = "/students">
+            Students
+            </a>
+        </p>
+        </div>  
+    </nav>
+
+    <!-------Student Card----------->
+
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Add Personal Information</h4>
+                        </div>
+                    </div>
+
+                <form class= "" action = "/students/addstudent" method = "post">
+                    <div class = "row">
+
+                        <div class = "add">
+                            <label class = "add-input">Name</label>
+                            <input name = "Name"type="text" placeholder="" class="form-control" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Gender</label>
+                            <select placeholder = "Select"name = "gender" class="form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Date Of Birth</label>
+                            <input name = "dob" type="date" placeholder="" class="form-control" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Phone</label>
+                            <input name = "phone" type="text" minlength = "11" maxlength = "11" placeholder="" class="form-control">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">CNIC</label>
+                            <input name = "cnic" type="text"  class="form-control"  minlength = "13" maxlength = "13" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Blood Group</label>
+                            <input name = "bloodGroup" type="text" placeholder="" class="form-control">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Religion</label>
+                            <input name = "religion" type="text" placeholder="" class="form-control">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Address</label>
+                            <input name = "address" type="text" placeholder="" class="form-control" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">E-Mail</label>
+                            <input name = "email" type="text" placeholder="" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Add Guardian's Information</h4>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "add">
+                            <label class = "add-input">Guardian's Name</label>
+                            <input name = "guardianName"type="text" placeholder="" class="form-control" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Guardian's Gender</label>
+                            <select name = "guardianGender" class = "form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Guardian's Relation</label>
+                            <input name = "guardianrelation"type="text" placeholder="" class="form-control" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Guardian's CNIC</label>
+                            <input name = "guardianCNIC" type="text" class="form-control" maxlength = "13" required>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Guardian's Phone</label>
+                            <input name = "guardianPhone"type="text" placeholder="" minlength = "11" maxlength = "11" class="form-control">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Guardian's Email</label>
+                            <input name = "guardianEmail"type="text" placeholder="" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Add Student's Admission Data</h4>
+                        </div>
+                    </div>
+                    <div class = "row">
+                        <div class = "add">
+                            <label class = "add-input">Batch ID</label>
+                            <select name = "batchId" class = "form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                 <% data.forEach((row,index) => {%>
+                                    <option value = "<%= data3[index].id %>"><%= data3[index].id %> (<%= row.batch_session %> <%= row.batch_year %> <%= row.campus_name %>)</option>
+                                 <% }); %>
+                            </select>       
+                        </div>
+
+
+                        <div class = "add">
+                            <label class = "add-input">Degree ID</label>
+                            <select name = "degreeId" class = "form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                <% data2.forEach(row => {%>
+                                    <option value = "<%= row.id %>"><%= row.id %> (<%= row.name_abbreviation %>)</option>
+                                 <% });%>
+                            </select>       
+                        </div>
+
+
+                        <div class = "add">
+                            <label class = "add-input">Batch Year</label>
+                            <select name = "batchYear" class = "form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                 <% const years = new Set(); %>
+                                 <% data.forEach(row => {%>
+                                  <%if (!years.has(row.batch_year)) { %>
+                                      <%years.add(row.batch_year);  %>
+                                     <option><%= row.batch_year %></option>
+                                  <% } %>
+                                  <% });%>
+                            </select>       
+                        </div>
+
+
+                        <div class = "add">
+                            <label class = "add-input">Enrollment Status</label>
+                            <select name = "enrollmentStatus" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                <option value = "1">1 (Current)</option>
+                                <option value = "2">2 (Alumni)</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "add2">
+                    <button type="submit" class="add2-btn">Submit</button>
+                    <button type="reset" class="add2-btn1">Reset</button>
+                </div>
+            </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<%-include ("partials/footer")-%>

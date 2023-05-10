@@ -1,0 +1,75 @@
+<%-include ("partials/header")-%>
+
+<!-- Main Dashboard -->
+
+<div class = "fulls">
+    <main class = "main">
+      <div class = "full1">
+        <nav class = "horizontal">
+          <div class = "tfull">
+            <div class = "tfull1">
+              <a class = "tfull2" href = " ">
+                Pages
+                <span class = "tfull3">
+                  /
+                </span>
+              </a>
+              <a class = "tfull4" href = "/batch">
+                Batch
+              </a>
+            </div>
+            <p class = "tfull5">
+              <a class = "tfull6" href = "/batch">
+                Batch
+              </a>
+            </p>
+          </div>  
+        </nav>
+
+
+    <!-------Student Card----------->
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Add Batch Information</h4>
+                        </div>
+                    </div>
+
+                <form class= "" action = "/batch/addbatch" method = "post">
+                    <div class = "row">
+
+                        <div class = "add">
+                            <label class = "add-input">Batch Session</label>
+                            <select placeholder = "Select"name = "batchSession" class="form-control" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value = "Spring">Spring</option>
+                                <option value = "Fall">Fall</option>
+                            </select> 
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Batch Year</label>
+                            <input name = "batchYear"type="text" placeholder="" class="form-control" autocomplete = "off" required>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "add2">
+                    <button type="submit" class="add2-btn">Submit</button>
+                    <button type="reset" class="add2-btn1">Reset</button>
+                </div>
+            </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<%-include ("partials/footer")-%>

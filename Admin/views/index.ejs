@@ -1,0 +1,276 @@
+<%-include ("partials/header")-%>
+
+<div class = "fulls">
+    <main class = "main">
+      <div class = "full1">
+        <nav class = "horizontal">
+          <div class = "tfull">
+            <div class = "tfull1">
+              <a class = "tfull2" href = " ">
+                Pages
+                <span class = "tfull3">
+                  /
+                </span>
+              </a>
+              <a class = "tfull4" href = "index.html">
+                Main Dashboard
+              </a>
+            </div>
+            <p class = "tfull5">
+              <a class = "tfull6" href = "index.html">
+                Main Dashboard
+              </a>
+            </p>
+          </div>  
+        </nav>
+
+<!-------Pills----------->
+
+<div class = "screen">
+<div>
+    <div class = "screen1">
+    <a href = "allstudents.html" target = "blank">
+        <div class = "pill1">
+        <div class = "pill1-icon">
+            <div class = "pill1-icon1">
+            <span class = "pill1-icon2">
+                <svg class = "icon-size" width="800px" height="800px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="currentColor" fill="currentColor"><circle cx="31.89" cy="22.71" r="5.57"/><path d="M43.16,43.74A11.28,11.28,0,0,0,31.89,32.47h0A11.27,11.27,0,0,0,20.62,43.74Z"/><circle cx="48.46" cy="22.71" r="5.57"/><path d="M46.87,43.74H59.73A11.27,11.27,0,0,0,48.46,32.47h0a11.24,11.24,0,0,0-5.29,1.32"/><circle cx="15.54" cy="22.71" r="5.57"/>
+                <path d="M17.13,43.74H4.27A11.27,11.27,0,0,1,15.54,32.47h0a11.24,11.24,0,0,1,5.29,1.32"/></svg>                     
+            </span>
+            </div>
+        </div>
+        <div class = "pill1-text">
+            <p class="pill1-text1">Students</p>
+            <h4 class="pill1-text2">
+                <%= typeof data[0] !== 'undefined' && typeof data[0][''] !== 'undefined' ? data[0][''] : '-' %>
+            </h4>
+        </div>
+        </div>
+    </a>
+
+    <a href = "allstudents.html" target = "blank">
+        <div class = "pill1">
+        <div class = "pill1-icon">
+            <div class = "pill1-icon1">
+            <span class = "pill1-icon2">
+                <svg fill="currentColor" width="800px" height="800px" class = "icon-size" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                <path d="M640.376 734.118c121.977 0 121.977 112.94 245.083 112.94 58.937 0 89.362-26.5 118.905-53.795l2.013-1.862c3.354-3.104 6.705-6.211 10.094-9.283v64.94c0 155.747-126.607 282.354-282.353 282.354s-282.353-126.607-282.353-282.353v-11.294c25.49-10.364 44.24-26.974 62.816-43.79l3.012-2.727c30.625-27.73 61.743-55.13 122.783-55.13ZM1920-.012V1129.4h-338.824v-112.94h225.883V112.93H112.94v903.53h112.941v112.94H0V-.01h1920ZM1471.85 714.24l-356.33 948.932c-174.268 10.39-448.941 17.957-631.002-48.113l38.4-106.165c130.334 47.435 337.807 53.873 529.807 41.675l132.593-354.635-60.424-15.812c-46.758-12.197-93.854-21.346-141.176-29.138 88.207-72.509 145.694-181.045 145.694-303.925V734.118c0-217.977-177.318-395.294-395.294-395.294-217.977 0-395.294 177.317-395.294 395.294v112.94c0 122.655 57.374 231.078 145.242 303.587-56.019 9.374-111.473 20.894-166.024 36.48-120.734 34.334-205.1 146.371-205.1 272.075v329.11l34.898 14.457C332.273 1879.454 535.115 1920 734.118 1920c180.254 0 348.65-15.925 474.127-44.725 50.371-11.407 90.917-46.983 108.65-95.096l31.849-87.304c14.343-39.19 7.567-81.995-18.41-114.522-12.988-16.49-29.816-28.913-48.565-36.48l295.793-787.878-105.713-39.755Z" fill-rule="evenodd"/>
+            </svg>
+            </span>
+            </div>
+        </div>
+        <div class = "pill1-text">
+            <p class="pill1-text1">Teachers</p>
+            <h4 class="pill1-text2">  <%= typeof data10[0] !== 'undefined' && typeof data10[0][''] !== 'undefined' ? data10[0][''] : '-' %>
+            </h4>
+        </div>
+        </div>
+    </a>
+
+
+    <a href = "allstudents.html" target = "blank">
+        <div class = "pill1">
+        <div class = "pill1-icon">
+            <div class = "pill1-icon1">
+            <span class = "pill1-icon2">
+                <svg fill="currentColor" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" class="icon-size" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 3c-7.456 0-13.5 6.044-13.5 13.5s6.044 13.5 13.5 13.5 13.5-6.044 13.5-13.5-6.044-13.5-13.5-13.5zM15.5 27c-5.799 0-10.5-4.701-10.5-10.5s4.701-10.5 10.5-10.5 10.5 4.701 10.5 10.5-4.701 10.5-10.5 10.5zM15.5 10c-0.828 0-1.5 0.671-1.5 1.5v5.062c0 0.828 0.672 1.5 1.5 1.5s1.5-0.672 1.5-1.5v-5.062c0-0.829-0.672-1.5-1.5-1.5zM15.5 20c-0.828 0-1.5 0.672-1.5 1.5s0.672 1.5 1.5 1.5 1.5-0.672 1.5-1.5-0.672-1.5-1.5-1.5z"></path>
+                </svg>                   
+            </span>
+            </div>
+        </div>
+        <div class = "pill1-text">
+            <p class="pill1-text1">Notifications</p>
+            <h4 class="pill1-text2">
+                <%= typeof data4[0] !== 'undefined' && typeof data4[0][''] !== 'undefined' ? data4[0][''] : '-' %>
+            </h4>
+        </div>
+        </div>
+    </a>
+
+
+
+    <a href = "allstudents.html" target = "blank">
+        <div class = "pill1">
+        <div class = "pill1-icon">
+            <div class = "pill1-icon1">
+            <span class = "pill1-icon2">
+                <svg fill="currentColor" width="800px" height="800px" viewBox="0 0 32 32" version="1.1" class="icon-size" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.114-0.011c-6.559 0-12.114 5.587-12.114 12.204 0 6.93 6.439 14.017 10.77 18.998 0.017 0.020 0.717 0.797 1.579 0.797h0.076c0.863 0 1.558-0.777 1.575-0.797 4.064-4.672 10-12.377 10-18.998 0-6.618-4.333-12.204-11.886-12.204zM16.515 29.849c-0.035 0.035-0.086 0.074-0.131 0.107-0.046-0.032-0.096-0.072-0.133-0.107l-0.523-0.602c-4.106-4.71-9.729-11.161-9.729-17.055 0-5.532 4.632-10.205 10.114-10.205 6.829 0 9.886 5.125 9.886 10.205 0 4.474-3.192 10.416-9.485 17.657zM16.035 6.044c-3.313 0-6 2.686-6 6s2.687 6 6 6 6-2.687 6-6-2.686-6-6-6zM16.035 16.044c-2.206 0-4.046-1.838-4.046-4.044s1.794-4 4-4c2.207 0 4 1.794 4 4 0.001 2.206-1.747 4.044-3.954 4.044z"></path>
+                </svg>                    
+            </span>
+            </div>
+        </div>
+        <div class = "pill1-text">
+            <p class="pill1-text1">Campus</p>
+            <h4 class="pill1-text2">
+                <%= typeof data1[0] !== 'undefined' && typeof data1[0].campus_name !== 'undefined' ? data1[0].campus_name : '-' %>
+            </h4>
+        </div>
+        </div>
+    </a>
+    </div>
+
+    <!-- --------------------Profile----------------------->
+    <div class = "profile">
+        <div class = "profile-box">
+            <div class = "profile-box1">
+            <div class = "profile-photo">
+                <img class = "profile-img" src="data:image/jpeg;base64,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">
+            </div>
+            </div>
+            <div class = "profile-text">
+            <h4 class = "profile-name">
+                <%= typeof data2[0] !== 'undefined' && typeof data2[0].adminName !== 'undefined' ? data2[0].adminName : '-' %>
+            </h4>
+            <p class = "profile-job" >Admin</p>
+            </div>
+            <div class = "basic-info">
+            <div class = "basic-info1">
+                <p class = "basic-info2">
+                    <%= typeof data2[0] !== 'undefined' && typeof data2[0].userId !== 'undefined' ? data2[0].userId : '-' %>
+                </p>
+                <p class = "basic-info3">UserID</p>
+            </div>
+            <div class = "basic-info1">
+                <p class = "basic-info2">
+                    <%= typeof data3[0] !== 'undefined' && typeof data3[0][''] !== 'undefined' ? data3[0][''] : '-' %>
+                </p>
+                <p class = "basic-info3">Age</p>
+            </div>
+            <div class = "basic-info1">
+                <p class = "basic-info2">
+                    <%= typeof data1[0] !== 'undefined' && typeof data1[0].campus_name !== 'undefined' ? data1[0].campus_name : '-' %>
+                </p>
+                <p class = "basic-info3">Campus</p>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+    <!----------------------- Content Part ---------------------->
+
+    <div class = "screen2">
+        <div class = "expbox">
+        <div>
+            <header class = "expbox-title">
+            <div class = "expbox-text">Student Distribution</div>
+            </header>
+            <div id="piechart" style = "width: 550px;
+            height: 358px;"></div>
+        </div>
+        </div>
+        <div class = "expbox">
+            <div>
+            <header class = "expbox-title">
+                <div class = "expbox-text" style = "padding-bottom:15px">Calendar</div>
+            </header>
+            <iframe src="https://calendar.google.com/calendar/embed?height=360&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKarachi&showTitle=1&showNav=1&showPrint=1&showTabs=1&showCalendars=1&showTz=1&src=cnVtYW5tbGsxMjNAZ21haWwuY29t&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=Y2xhc3Nyb29tMTE1NDA1NzIzNzYzNzE2NzU2OTk2QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=ZW4ucGsjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%237627bb&color=%230B8043" style="border:solid 1px #777" width="520" height="360" frameborder="0" scrolling="no"></iframe>                      
+        </div>      
+
+    
+        </div>      
+            </div>
+
+            <div class = "profile">
+                <div class = "profile-box">
+                <header class = "expbox-title">
+                <div class = "expbox-text">Notifications</div>
+                </header>
+                <div class = "expbox-table">
+                <table role="table" class variant="simple" color="gray-500" mb="24px">
+                    <thead>
+                    <tr role="row">
+                        <th colspan="1" role="columnheader" title="Toggle SortBy" class="col1" style="padding-left:1rem;cursor: pointer;">
+                            <div class="head1">ID
+                            </div>
+                        </th>
+                        <th colspan="1" role="columnheader" title="Toggle SortBy" class="col1" style="padding-left:1rem;cursor: pointer;">
+                        <div class="head1">RollNo
+                        </div>
+                        </th>
+                        <th colspan="1" role="columnheader" title="Toggle SortBy" class="col1" style="cursor: pointer;">
+                        <div class="head1">Text
+                        </div>
+                        </th>
+                        <th colspan="1" role="columnheader" title="Toggle SortBy" class="col1" style="cursor: pointer;">
+                        <div class="head1">Title
+                        </div>
+                        </th>
+                        <th colspan="1" role="columnheader" title="Toggle SortBy" class="col1" style="cursor: pointer;">
+                            <div class="head1">Date
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        <% data7.forEach((row,index) =>{ %>
+                        <tr role="row">
+                        <td role="cell" class="row1">
+                            <div class="row1-1">
+                                <p style class="row-font">
+                                    <%= typeof data9[index] !== 'undefined' && typeof data9[index].id !== 'undefined' ? data9[index].id : '-' %>
+                                </p>
+                            </div>
+                            </td>
+                        <td role="cell" class="row1">
+                        <div class="row1-1">
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<%= encodeURIComponent(data8[index].email) %>&su=<%= encodeURIComponent(row.notification_title) %>&body=<%= encodeURIComponent(row.notification_text) %>&authuser=2" target="_blank" 
+                                aria-label="Email <%= typeof data8[index] !== 'undefined' && typeof data8[index].email !== 'undefined' ? data8[index].email : '-' %>" 
+                                data-tooltip-enabled="true" 
+                                data-tooltip-id="tt-c10">
+                                <p class="row-font">
+                                    <%= typeof data9[index] !== 'undefined' && typeof data9[index].rollNo !== 'undefined' ? data9[index].rollNo : '-' %>
+                            </a>
+                        </div>
+                        </td>
+                        <td role="cell" class="row1">
+                        <p class="row-font">
+                            <%= typeof row !== 'undefined' && typeof row.notification_text !== 'undefined' ? row.notification_text : '-' %>
+                        </p>
+                        </td>
+                        <td role="cell" class="row1">
+                        <p class="row-font">
+                            <%= typeof row !== 'undefined' && typeof row.notification_title !== 'undefined' ? row.notification_title : '-' %>
+                        </p>
+                        </td>
+                        <td role="cell" class="row1">
+                            <p class="row-font"><%
+                                let date = new Date(row.notification_date);
+                                let year = date.getFullYear();
+                                let month = date.getMonth() + 1;
+                                let day = date.getDate();
+                                let formattedDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+                                %>
+                                <%= typeof formattedDate !== 'undefined' ? formattedDate : '-' %>
+                            </p>
+                        </td>
+                    </tr>
+                    <% })%>
+
+                    </tbody>
+                </table>
+            </div>
+        <script>    
+        google.charts.load('current', {'packages':['bar','corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        var data5 = "<%= data5[0]['']%>";
+        var data6 = "<%= data6[0]['']%>";
+
+        function drawChart() {
+
+        var data1 = google.visualization.arrayToDataTable([
+            ['Gender', 'Total Students'],
+            ['Male',     parseInt(data5)],
+            ['Female',    parseInt(data6)]
+        ]);
+
+        var chart1 = new google.visualization.PieChart(document.getElementById('piechart'));
+        
+        chart1.draw(data1);
+
+        }
+        </script>
+<%-include ("partials/footer")-%>

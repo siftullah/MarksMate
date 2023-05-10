@@ -1,0 +1,97 @@
+<%-include ("partials/header")-%>
+
+<!-- Main Dashboard -->
+
+<div class = "fulls">
+<main class = "main">
+    <div class = "full1">
+    <nav class = "horizontal">
+        <div class = "tfull">
+        <div class = "tfull1">
+            <a class = "tfull2" href = " ">
+            Pages
+            <span class = "tfull3">
+                /
+            </span>
+            </a>
+            <a class = "tfull4" href = "/courses">
+            Courses
+            </a>
+        </div>
+        <p class = "tfull5">
+            <a class = "tfull6" href = "/courses">
+            Courses
+            </a>
+        </p>
+        </div>  
+    </nav>
+
+    <!-------Student Card----------->
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Add Course Information</h4>
+                        </div>
+                    </div>
+
+                <form class= "" action = "/courses/editcourse" method = "post">
+                    <div class = "row">
+
+                        <div class = "add">
+                            <label class = "add-input">Course Name</label>
+                            <input name = "courseName"type="text" placeholder="" class="form-control" autocomplete = "off">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Course Type</label>
+                            <select placeholder = "Select"name = "courseType" class="form-control">
+                                <option value="" disabled selected>Select</option>
+                                <option value = "1">1 (Theory)</option>
+                                <option value = "2">2 (Lab)</option>
+                            </select>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Credit Hours</label>
+                            <input name = "creditHours" type = "number" placeholder="" class="form-control" autocomplete = "off">
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Course Relation</label>
+                            <select placeholder = "Select" name = "courseRelation" class="form-control">
+                                <option value="" disabled selected>Select</option>
+                                <option value = "1">1 (Core)</option>
+                                <option value = "2">2 (Elective)</option>
+                            </select>
+                        </div>
+
+                        <div class = "add">
+                            <label class = "add-input">Pre-Requisite Course</label>
+                            <select placeholder = "Select" name = "preReq" class = "form-control">
+                                <option value="" disabled selected>Select</option>
+                                 <% data.forEach(row => {%>
+                                    <option value = "<%= row.course_code %>"><%= row.course_code %> (<%= row.course_name %>)</option>
+                                 <% }); %>
+                            </select> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class = "add2">
+                    <button type="submit" class="add2-btn">Submit</button>
+                    <button type="reset" class="add2-btn1">Reset</button>
+                </div>
+            </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<%-include ("partials/footer")-%>

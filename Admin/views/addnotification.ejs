@@ -1,0 +1,87 @@
+<%-include ("partials/header")-%>
+
+<!-- Main Dashboard -->
+
+<div class = "fulls">
+<main class = "main">
+    <div class = "full1">
+    <nav class = "horizontal">
+        <div class = "tfull">
+        <div class = "tfull1">
+            <a class = "tfull2" href = " ">
+            Pages
+            <span class = "tfull3">
+                /
+            </span>
+            </a>
+            <a class = "tfull4" href = "/notification">
+            Notifications
+            </a>
+        </div>
+        <p class = "tfull5">
+            <a class = "tfull6" href = "/notification">
+            Notifications
+            </a>
+        </p>
+        </div>  
+    </nav>
+
+    <!-------Student Card----------->
+
+
+            <div class = "student">
+                <div class = "student-body">
+                    <div class="student-head">
+                        <div class = "general-h">
+                            <h4 class = "general-title">Write New Notification</h4>
+                        </div>
+                    </div>
+
+                <form class= "" action = "/notification/addnotification" method = "post">
+                    <div class = "row">
+                        <div style = "flex: 0 0 100%; max-width: 100%;"class = "add">
+                            <label class = "add-input">Title</label>
+                            <input name = "title"  type="text" placeholder="Enter Title" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class = "row">
+                        <div style = "flex: 0 0 100%; max-width: 100%;" class = "add">
+                            <label class = "add-input">Recipient</label>
+                            <input id = "myInput"list = "myOptions"name = "recipient"type="text" placeholder="Enter roll no." class="form-control"autocomplete = "off">
+                            <datalist id="myOptions">
+                                <% data.forEach(row =>{ %>
+                                    <% if (row.rollNo !== null) { %>
+                                    <option value="<%= row.rollNo %>"><%= row.rollNo %></option>
+                                    <% } %>
+                                <% })%>
+                            </datalist>
+                        </div>       
+                    </div>
+
+                    <div class = "row">
+                        <div style = "flex: 0 0 100%; max-width: 100%;" class = "add">
+                            <label class = "add-input">Message</label>
+                            <textarea style = "height: 279px;"name = "message" type="text" placeholder="Enter message" class="form-control" required></textarea>
+                        </div>      
+                    </div>
+
+                    <div class = "row">
+                        <div class = "add2">
+                            <button type="submit" class="add2-btn">Submit</button>
+                            <button type="reset" class="add2-btn1">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+<%-include ("partials/footer")-%>
